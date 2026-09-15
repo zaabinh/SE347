@@ -1,0 +1,33 @@
+body {
+    background-image: url("images/hoang-hon-phu-quoc.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+p {
+    color: white
+}
+
+h1 {
+    color: yellow;
+}
+
+h2#p1 {
+    color:aqua
+}
+
+h2#p2 {
+    color:red
+}
+
+h2#p3 {
+    color:greenyellow
+}
+
+h2#p4 {
+    color: orange
+}
+
+h2#p5 {
+    color: purple
+}
