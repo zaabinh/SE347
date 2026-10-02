@@ -1,0 +1,107 @@
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background:
+        url("images/background.gif") repeat-y;
+    background-size: contain;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+img {
+    max-width: 100%;
+    border: 0;
+}
+
+a {
+    color: #f00;
+    font-weight: bold;
+}
+
+a:hover,
+a:focus {
+    color: #ff8080;
+}
+
+/* ===== Layout ===== */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 628px;
+    min-height: 560px;
+    margin: 48px auto 0;
+    padding-bottom: 31px;
+    background-color: #000;
+}
+
+.banner {
+    display: block;
+}
+
+/* ===== Main content ===== */
+.content {
+    max-width: 460px;
+    padding-top: 12px;
+}
+
+.content p {
+    margin: 0 0 12px;
+}
+
+.work-logo {
+    display: block;
+}
+
+/* ===== Footer ===== */
+footer {
+    max-width: 460px;
+    margin-top: auto;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+}
+
+footer a {
+    font-weight: normal;
+}
+
+.at-icon {
+    vertical-align: text-bottom;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 660px) {
+    body {
+        background: #000;
+    }
+
+    .container {
+        margin-top: 0;
+        min-height: 100vh;
+        padding-bottom: 16px;
+    }
+
+    .content,
+    footer {
+        max-width: none;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .content {
+        padding-top: 16px;
+    }
+
+    footer {
+        margin-top: 32px;
+    }
+}
