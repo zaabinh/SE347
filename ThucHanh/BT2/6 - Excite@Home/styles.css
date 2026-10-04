@@ -77,31 +77,3 @@ footer a {
 .at-icon {
     vertical-align: text-bottom;
 }
-
-/* ===== Responsive ===== */
-@media (max-width: 660px) {
-    body {
-        background: #000;
-    }
-
-    .container {
-        margin-top: 0;
-        min-height: 100vh;
-        padding-bottom: 16px;
-    }
-
-    .content,
-    footer {
-        max-width: none;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .content {
-        padding-top: 16px;
-    }
-
-    footer {
-        margin-top: 32px;
-    }
-}

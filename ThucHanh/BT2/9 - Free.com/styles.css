@@ -1,0 +1,103 @@
+:root {
+    --brand-blue: #306790;
+    --link-red: #cc0000;
+    --page-white: #ffffff;
+    --footer-black: #000000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    color: var(--brand-blue);
+    background: var(--brand-blue);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+}
+
+p {
+    margin: 0;
+}
+
+main {
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 1rem 0.5rem;
+    background: var(--page-white);
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.banner {
+    border: 1px solid var(--link-red);
+}
+
+.intro {
+    margin: 2rem 0 0.5rem;
+}
+
+.members {
+    width: 100%;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.members td {
+    width: 20%;
+    padding: 0;
+    text-align: center;
+}
+
+.members .caption td {
+    padding-top: 1.25rem;
+}
+
+.members .contact td {
+    padding: 2.5rem 0 2rem;
+    font-size: 0.625rem;
+}
+
+.partners td {
+    padding-bottom: 0.75rem;
+}
+
+footer {
+    font-family: "Courier New", Courier, monospace;
+    color: var(--footer-black);
+    font-weight: bold;
+}
+
+a:link,
+a:visited {
+    color: var(--link-red);
+}
+
+a:hover,
+a:focus {
+    color: orange;
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 100%;
+    }
+}
