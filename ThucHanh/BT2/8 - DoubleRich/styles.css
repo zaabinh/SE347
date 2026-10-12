@@ -39,7 +39,7 @@ img {
 }
 
 .promo-title {
-    flex: 0 0 501px;
+    flex: 0 0 70%;
 }
 
 .tagline {
@@ -80,7 +80,7 @@ img {
 /* ===== Content ===== */
 .promo-content {
     display: grid;
-    grid-template-columns: 321px 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 31px;
     padding: 10px 9px 10px 30px;
 }

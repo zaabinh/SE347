@@ -1,10 +1,14 @@
 /* ===== Base ===== */
 body {
-    display: flex;
-    justify-content: center;
+    box-sizing: border-box;
+    min-height: 700px;
     margin: 0;
     padding: 120px 8px 0;
-    background: #fff url("images/nguyen-tac-trong-thiet-ke-do-hoa.jpg") repeat-x right top;
+    /* Drawing sits behind the table: 552px left of the page centre */
+    background:
+        url("images/truong_day_thiet_ke_do_hoa.jpg") left calc(50vw - 552px) top 298px no-repeat,
+        url("images/nguyen-tac-trong-thiet-ke-do-hoa.jpg") right top repeat-x,
+        #fff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
@@ -19,8 +23,6 @@ h1 {
 
 /* ===== Table ===== */
 table {
-    position: relative;
-    z-index: 1;
     margin: 0 auto;
     border: 5px solid #0f0;
     border-spacing: 2px;
@@ -51,11 +53,4 @@ tr:nth-child(even) td {
 
 tr:last-child td {
     background-color: #f90;
-}
-
-/* ===== Decorative illustration (sits behind the table) ===== */
-.bottom-left-img {
-    display: block;
-    max-width: none;
-    margin: -220px 0 0 calc(50% - 552px);
 }

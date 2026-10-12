@@ -7,11 +7,24 @@
     --gap: 1rem;
 }
 
-.page-hue {
-    --accent: #9900cc;
+/* Each section sets its title colour and floated-image widths */
+.intro {
+    --left-width: 240px;
+    --right-width: 20%;
 }
 
-.page-hcm {
+.city-hanoi {
+    --left-width: 25%;
+    --right-width: 28%;
+}
+
+.city-hue {
+    --accent: #9900cc;
+    --left-width: 32%;
+    --right-width: 32%;
+}
+
+.city-hcm {
     --accent: #ff00cc;
 }
 
@@ -28,7 +41,7 @@ html {
 
 body {
     margin: 0;
-    padding: 0.5rem 0.5rem calc(var(--bar-height) + 1.5rem);
+    padding: 0.5rem 0.5rem calc(var(--bar-height) + 1rem);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.25;
@@ -55,8 +68,28 @@ p {
     margin: 0 0 1rem;
 }
 
-/* ===== Page title ===== */
+a:link {
+    color: #0000ee;
+}
+
+a:visited {
+    color: #551a8b;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--accent);
+}
+
+/* ===== Titles ===== */
 .page-title {
+    margin: 0.75rem 0 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--accent);
+}
+
+.city-title {
     margin: 0.375rem 0 1.25rem;
     padding: 0.375rem 1rem;
     font-size: 1.375rem;
@@ -64,13 +97,15 @@ p {
     background: var(--accent);
 }
 
-.page-index .page-title {
-    margin: 0.75rem 0 1.5rem;
-    padding: 0;
-    font-size: 2rem;
-    text-align: center;
-    color: var(--accent);
-    background: none;
+/* Sections contain their own floats */
+.intro,
+.city {
+    display: flow-root;
+}
+
+.back-to-top {
+    clear: both;
+    text-align: right;
 }
 
 /* ===== Figures ===== */
@@ -85,11 +120,13 @@ p {
 
 .figure-left {
     float: left;
+    width: var(--left-width, 30%);
     margin-right: var(--gap);
 }
 
 .figure-right {
     float: right;
+    width: var(--right-width, 30%);
     margin-left: var(--gap);
 }
 
@@ -105,6 +142,16 @@ p {
     text-align: center;
 }
 
+/* Image map: the clickable areas use pixel coords, so never scale it */
+.figure-map {
+    margin: 0 3.75rem 1rem 2.5rem;
+}
+
+.figure-map img {
+    width: 240px;
+    max-width: none;
+}
+
 /* Decorative first letter */
 .drop-cap {
     float: left;
@@ -113,17 +160,7 @@ p {
     margin: 0.25em 0.25em 0 0;
 }
 
-/* ===== Index page ===== */
-.page-index .figure-left {
-    width: 240px;
-    max-width: 30%;
-    margin: 0 3.75rem 1rem 2.5rem;
-}
-
-.page-index .figure-right {
-    width: 20%;
-}
-
+/* ===== Intro menu ===== */
 .site-nav {
     display: flow-root; /* sits beside the floated map */
     margin-bottom: 1rem;
@@ -134,30 +171,15 @@ p {
     padding-left: 0; /* bullets hang left, links align with the paragraphs */
 }
 
-/* ===== Hà Nội ===== */
-.page-hanoi .figure-left {
-    width: 25%;
-}
-
-.page-hanoi .figure-right {
-    width: 28%;
-}
-
-/* ===== Huế ===== */
-.page-hue .figure-left,
-.page-hue .figure-right {
-    width: 32%;
-}
-
 /* ===== TP.HCM: 3 newspaper columns ===== */
-.page-content-columns {
+.columns {
     column-count: 3;
     column-gap: 1.75rem;
     column-rule: 1px dashed #999999;
     font-size: 1.0625rem;
 }
 
-.page-content-columns .drop-cap {
+.columns .drop-cap {
     height: 4.75rem;
     margin-top: 0.5rem;
 }
@@ -166,26 +188,7 @@ p {
     break-inside: avoid;
 }
 
-/* ===== Footer ===== */
-.page-footer {
-    clear: both;
-    text-align: right;
-}
-
-a:link {
-    color: #0000ee;
-}
-
-a:visited {
-    color: #551a8b;
-}
-
-a:hover,
-a:focus-visible {
-    color: var(--accent);
-}
-
-/* Fixed navigation + music bar */
+/* ===== Fixed navigation + music bar ===== */
 .bottom-bar {
     position: fixed;
     right: 0;
@@ -199,13 +202,12 @@ a:focus-visible {
     gap: 0.5rem 1rem;
     min-height: var(--bar-height);
     padding: 0.375rem 1rem;
-    text-align: left;
     color: #ffffff;
     background: var(--accent);
     box-shadow: 0 -2px 6px rgb(0 0 0 / 0.25);
 }
 
-.history-controls {
+.section-controls {
     display: flex;
     gap: 0.5rem;
 }
@@ -221,8 +223,6 @@ a:focus-visible {
 
 .icon-button img {
     display: block;
-    width: 22px;
-    height: 22px;
 }
 
 .bar-nav ul {
@@ -241,14 +241,9 @@ a:focus-visible {
 }
 
 .bar-nav a:hover,
-.bar-nav a:focus-visible,
-.bar-nav a[aria-current="page"] {
+.bar-nav a:focus-visible {
     text-decoration: underline;
     text-underline-offset: 0.2em;
-}
-
-.bar-nav a[aria-current="page"] {
-    font-weight: bold;
 }
 
 .music-toggle {
@@ -277,7 +272,7 @@ a:focus-visible {
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
-    .page-content-columns {
+    .columns {
         column-count: 2;
     }
 }
@@ -287,35 +282,31 @@ a:focus-visible {
         --bar-height: 5.5rem;
     }
 
-    .page-index .page-title {
+    .page-title {
         font-size: 1.5rem;
     }
 
-    .page-content-columns {
+    .columns {
         column-count: 1;
     }
 
     .figure-left,
     .figure-right,
-    .page-index .figure-left,
-    .page-index .figure-right,
-    .page-hanoi .figure-left,
-    .page-hanoi .figure-right,
-    .page-hue .figure-left,
-    .page-hue .figure-right,
     .figure-center {
         float: none;
         width: 100%;
-        max-width: 100%;
         margin: 0 0 1rem;
     }
 
-    .page-index .figure-left img {
-        width: 60%;
+    .figure-map img {
         margin: 0 auto;
     }
 
-    /* Row 1: history buttons + music, row 2: page links */
+    .site-nav ul {
+        padding-left: 1.25rem;
+    }
+
+    /* Row 1: section buttons + music, row 2: section links */
     .bar-nav {
         order: 1;
         width: 100%;
