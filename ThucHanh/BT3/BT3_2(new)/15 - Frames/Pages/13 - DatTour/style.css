@@ -1,0 +1,234 @@
+:root {
+    --orange: rgb(255, 152, 0);
+    --field-orange: rgba(255, 166, 0, 0.3);
+    --blue: blue;
+}
+
+body {
+    background: url("hinh/bg3.jpg") center / cover no-repeat fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px 8px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: var(--orange);
+    text-shadow: 1px 1px 1px white,
+                1px 2px 3px white,
+                0 0 3px #335;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.form-container {
+    box-sizing: border-box;
+    width: 765px;
+    max-width: 100%;
+    border-radius: 12px;
+    border: 1px solid white;
+    box-shadow: 4px 5px 6px white;
+    animation: rise-in 0.5s ease-out;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 8px;
+    color: var(--blue);
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+}
+
+/* One grid for the whole form: every label shares the same column */
+#register-form {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: 28px 24px;
+    padding: 8px;
+}
+
+.form-row {
+    display: contents;
+}
+
+label, .group-label {
+    justify-self: end;
+}
+
+input:not([type="checkbox"], [type="radio"]), select, textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+    background-color: var(--field-orange);
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 5px;
+    font: inherit;
+    color: inherit;
+    text-shadow: inherit;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: rgba(255, 166, 0, 0.45);
+    box-shadow: 0 0 8px var(--orange);
+}
+
+/* Dropdown list: drop the white text-shadow and bold inherited from the form */
+optgroup, option {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    color: black;
+    text-shadow: none;
+    background-color: white;
+}
+
+optgroup {
+    font-weight: bold;
+    color: var(--blue);
+}
+
+option {
+    font-weight: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    accent-color: var(--blue);
+}
+
+#fullname {
+    width: 15rem;
+}
+
+#address {
+    width: 26.5rem;
+    height: 4rem;
+}
+
+#tel, #adults, #children {
+    width: 12.5rem;
+}
+
+#note {
+    width: 26.5rem;
+    height: 6rem;
+}
+
+.transport-input {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 6px;
+}
+
+.transport-input label {
+    margin-right: 6px;
+}
+
+.guest-group {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    margin: 0;
+    padding: 24px 8px;
+    border: 1px solid rgb(161, 153, 164);
+}
+
+.guest-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+}
+
+.guest-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 8px 10px;
+    color: white;
+    background: var(--orange);
+    font-weight: bold;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover, button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#message {
+    margin: 0 0 8px;
+    text-align: center;
+    color: red;
+}
+
+#message:not(:empty) {
+    animation: pop-in 0.4s ease-out;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 600px) {
+    #register-form {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    label, .group-label {
+        justify-self: start;
+        margin-top: 8px;
+    }
+
+    .transport-input label, .guest-field label {
+        margin-top: 0;
+    }
+
+    #fullname, #address, #tel, #note, select {
+        width: 100%;
+    }
+
+    .guest-row {
+        flex-direction: column;
+    }
+
+    .guest-field input {
+        flex: 1;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-container, input, select, textarea, button, #message {
+        animation: none;
+        transition: none;
+    }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Form đăng nhập</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <form class="login-form" action="index.html">
+                <h1>Form đăng nhập</h1>
+
+                <label for="username">Tên người dùng</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+                <button type="submit">Đăng nhập</button>
+                <p class="message" id="message" role="status"></p>
+            </form>
+        </main>
+    </body>
+</html>

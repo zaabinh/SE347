@@ -1,0 +1,219 @@
+:root {
+    --blue: rgb(16, 98, 208);
+    --dark-blue: rgb(8, 95, 172);
+    --title-blue: rgb(17, 80, 247);
+    --light-blue: rgb(178, 205, 252);
+    --field-blue: rgba(0, 136, 252, 0.25);
+    --shadow-blue: rgb(43, 127, 226);
+    --button-top: rgb(23, 96, 199);
+    --button-bottom: rgb(5, 151, 200);
+    --cyan: rgb(0, 204, 255);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+
+    -webkit-text-stroke: 0.5px var(--title-blue);
+
+    text-shadow:
+        1px 1px 2px var(--title-blue),
+        -1px -1px 2px var(--title-blue),
+        0 0 5px var(--title-blue),
+        3px 4px 6px var(--light-blue);
+}
+
+.form-container {
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 4px 5px 6px var(--shadow-blue);
+    background: url("hinh/khuyen-mai.png") center bottom 15px / min(615px, 100%) no-repeat;
+    padding: 10px 70px 75px 70px;
+    animation: rise-in 0.5s ease-out;
+}
+
+form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 18px 15px;
+}
+
+label {
+    justify-self: end;
+    font-weight: bold;
+    color: var(--dark-blue);
+}
+
+input, select, textarea {
+    box-sizing: border-box;
+    width: fit-content;
+    padding: 0.25rem 0.4rem;
+    border: 1px dotted var(--blue);
+    border-radius: 8px;
+    background: var(--field-blue);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    background-color: rgba(0, 136, 252, 0.35);
+    box-shadow: 0 0 6px var(--shadow-blue);
+}
+
+#fullname {
+    width: 15rem;
+}
+
+#address {
+    width: 16rem;
+    height: 5.75rem;
+}
+
+#email, #tel, #prediction {
+    width: 11rem;
+}
+
+#product {
+    width: 8rem;
+    border-radius: 0;
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gender-input input {
+    margin: 0 4px 0 0;
+    accent-color: rgb(0, 119, 255);
+}
+
+.gender-input label {
+    margin-right: 6px;
+}
+
+button {
+    grid-column: 1 / -1;
+    grid-row: 9;
+    justify-self: center;
+    width: fit-content;
+    background: linear-gradient(var(--button-top), var(--button-bottom));
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid var(--cyan);
+    border-radius: 8px;
+    padding: 4px 6px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#submit {
+    translate: calc(-50% - 3px);
+}
+
+#reset {
+    translate: calc(50% + 3px);
+}
+
+button:hover, button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px var(--shadow-blue);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+#message {
+    width: fit-content;
+    margin: 16px auto 0;
+    padding: 6px 14px;
+    border: 1px dotted var(--blue);
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--dark-blue);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 6px var(--light-blue);
+}
+
+#message::before {
+    content: "✔ ";
+    color: rgb(0, 119, 255);
+}
+
+#message:empty {
+    display: none;
+}
+
+#message:not(:empty) {
+    animation: rise-in 0.4s ease-out;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 100%;
+        padding: 10px 16px 140px 16px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    label {
+        justify-self: start;
+        margin-top: 8px;
+    }
+
+    .gender-input label {
+        margin-top: 0;
+    }
+
+    input, select, #fullname, #address, #email, #tel, #prediction, #product {
+        width: 100%;
+    }
+
+    .gender-input input {
+        width: auto;
+    }
+
+    button {
+        grid-row: auto;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    #submit, #reset {
+        translate: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .form-container, input, select, button, #message {
+        animation: none;
+        transition: none;
+    }
+}

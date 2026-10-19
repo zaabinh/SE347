@@ -1,0 +1,165 @@
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: max(100vh, 696px);
+    margin: 0;
+    padding-top: max(50px, calc(100vh - 646px));
+    background:
+        url("images/rose.png") calc(50% - 393px) bottom no-repeat,
+        url("images/kim-tea-hee.png") left calc(50% - 449px) bottom 32px no-repeat,
+        url("images/nen-hoa-hong.png") right bottom / max(613px, calc(50% - 27px)) auto no-repeat,
+        #900;
+    color: #fcf;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ===== Promo box ===== */
+.promo {
+    width: 719px;
+    max-width: 100%;
+    margin-left: calc(50% - 318px);
+    border: 1px solid #fcf;
+}
+
+/* ===== Header ===== */
+.promo-header {
+    display: flex;
+    background-color: #fcf;
+}
+
+.promo-title {
+    flex: 0 0 70%;
+}
+
+.tagline {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 79px;
+    margin: 0;
+    padding-right: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.2;
+    background-color: #f00;
+    color: #fff;
+}
+
+.promo-header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 93px;
+    margin: 0;
+    color: #f00;
+    font-size: 32px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.product {
+    flex: 1;
+    padding: 17px 10px 0 6px;
+}
+
+.product img {
+    width: 200px;
+}
+
+/* ===== Content ===== */
+.promo-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 31px;
+    padding: 10px 9px 10px 30px;
+}
+
+.promo-column h2 {
+    margin: 16px 0;
+    color: #f00;
+    font-size: 16px;
+}
+
+.promo-column h2::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border: 2px solid #f00;
+    vertical-align: -1px;
+}
+
+.promo-column ul,
+.promo-column ol {
+    margin: 16px 0;
+}
+
+.promo-column ul {
+    padding-left: 34px;
+}
+
+.promo-column ol {
+    padding-left: 41px;
+}
+
+.promo-column strong {
+    font-style: italic;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    body {
+        min-height: 100vh;
+        padding: 24px 16px;
+        background-image: none;
+    }
+
+    .promo {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .promo-header {
+        flex-direction: column;
+    }
+
+    .promo-title {
+        flex-basis: auto;
+    }
+
+    .product {
+        padding: 16px;
+        text-align: center;
+    }
+
+    .tagline {
+        justify-content: center;
+        height: auto;
+        padding: 16px;
+        font-size: 20px;
+    }
+
+    .promo-header h1 {
+        height: auto;
+        padding: 16px;
+        font-size: 26px;
+    }
+
+    .promo-content {
+        grid-template-columns: 1fr;
+        padding: 0 16px 10px;
+    }
+}

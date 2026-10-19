@@ -1,0 +1,29 @@
+* {
+    text-align: center;
+}
+h1 {
+    background-color: pink;
+    color: black;
+    font-size: 40px;
+}
+section {
+    background-color: #ffffe5;
+    font-style: italic;
+    font-size: 20px;
+}
+
+#p1 {
+    color: blue;
+}
+
+#p2 {
+    color: purple;
+}
+
+#p3 {
+    color: green;
+}
+
+hr {
+    width: 50%;
+}
