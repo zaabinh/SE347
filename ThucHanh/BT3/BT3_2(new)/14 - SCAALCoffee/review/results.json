@@ -1,0 +1,498 @@
+{
+  "screens": [
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "home",
+      "title": "Home | SCAAL Coffee",
+      "heading": "Welcome",
+      "paragraphs": 4,
+      "textLength": 453,
+      "active": [
+        "#home"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "none",
+      "nav": {
+        "x": 0,
+        "y": 49.421875,
+        "right": 390,
+        "bottom": 177.421875
+      },
+      "main": {
+        "x": 0,
+        "y": 177.421875,
+        "right": 390,
+        "bottom": 625.421875
+      },
+      "article": {
+        "x": 20,
+        "y": 197.421875,
+        "right": 370,
+        "bottom": 552.484375
+      },
+      "decoration": {
+        "x": 0,
+        "y": 625.421875,
+        "right": 390,
+        "bottom": 755.421875
+      }
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "story",
+      "title": "Our Story | SCAAL Coffee",
+      "heading": "Our Story",
+      "paragraphs": 1,
+      "textLength": 490,
+      "active": [
+        "#story"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "none",
+      "nav": {
+        "x": 0,
+        "y": 49.421875,
+        "right": 390,
+        "bottom": 177.421875
+      },
+      "main": {
+        "x": 0,
+        "y": 177.421875,
+        "right": 390,
+        "bottom": 625.421875
+      },
+      "article": {
+        "x": 20,
+        "y": 197.421875,
+        "right": 370,
+        "bottom": 554.078125
+      },
+      "decoration": {
+        "x": 0,
+        "y": 625.421875,
+        "right": 390,
+        "bottom": 755.421875
+      }
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "products",
+      "title": "Products | SCAAL Coffee",
+      "heading": "What makes SCAAL the best coffee?",
+      "paragraphs": 2,
+      "textLength": 525,
+      "active": [
+        "#products"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "none",
+      "nav": {
+        "x": 0,
+        "y": 49.421875,
+        "right": 390,
+        "bottom": 177.421875
+      },
+      "main": {
+        "x": 0,
+        "y": 177.421875,
+        "right": 390,
+        "bottom": 625.421875
+      },
+      "article": {
+        "x": 20,
+        "y": 197.421875,
+        "right": 370,
+        "bottom": 599.671875
+      },
+      "decoration": {
+        "x": 0,
+        "y": 625.421875,
+        "right": 390,
+        "bottom": 755.421875
+      }
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "height": 844,
+      "route": "thisweek",
+      "title": "This week | SCAAL Coffee",
+      "heading": "This week",
+      "paragraphs": 3,
+      "textLength": 701,
+      "active": [
+        "#thisweek"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "none",
+      "nav": {
+        "x": 0,
+        "y": 48.140625,
+        "right": 375,
+        "bottom": 176.140625
+      },
+      "main": {
+        "x": 0,
+        "y": 176.140625,
+        "right": 375,
+        "bottom": 732.734375
+      },
+      "article": {
+        "x": 20,
+        "y": 196.140625,
+        "right": 355,
+        "bottom": 712.734375
+      },
+      "decoration": {
+        "x": 0,
+        "y": 732.734375,
+        "right": 375,
+        "bottom": 862.734375
+      }
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "height": 1024,
+      "route": "home",
+      "title": "Home | SCAAL Coffee",
+      "heading": "Welcome",
+      "paragraphs": 4,
+      "textLength": 453,
+      "active": [
+        "#home"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 0,
+        "y": 76,
+        "right": 149,
+        "bottom": 588
+      },
+      "main": {
+        "x": 149,
+        "y": 76,
+        "right": 768,
+        "bottom": 588
+      },
+      "article": {
+        "x": 172.03125,
+        "y": 99.03125,
+        "right": 744.96875,
+        "bottom": 345.34375
+      },
+      "decoration": {
+        "x": 0,
+        "y": 588,
+        "right": 768,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "height": 1024,
+      "route": "story",
+      "title": "Our Story | SCAAL Coffee",
+      "heading": "Our Story",
+      "paragraphs": 1,
+      "textLength": 490,
+      "active": [
+        "#story"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 0,
+        "y": 76,
+        "right": 149,
+        "bottom": 588
+      },
+      "main": {
+        "x": 149,
+        "y": 76,
+        "right": 768,
+        "bottom": 588
+      },
+      "article": {
+        "x": 172.03125,
+        "y": 99.03125,
+        "right": 744.96875,
+        "bottom": 319.75
+      },
+      "decoration": {
+        "x": 0,
+        "y": 588,
+        "right": 768,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "height": 1024,
+      "route": "products",
+      "title": "Products | SCAAL Coffee",
+      "heading": "What makes SCAAL the best coffee?",
+      "paragraphs": 2,
+      "textLength": 525,
+      "active": [
+        "#products"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 0,
+        "y": 76,
+        "right": 149,
+        "bottom": 588
+      },
+      "main": {
+        "x": 149,
+        "y": 76,
+        "right": 768,
+        "bottom": 588
+      },
+      "article": {
+        "x": 172.03125,
+        "y": 99.03125,
+        "right": 744.96875,
+        "bottom": 358.9375
+      },
+      "decoration": {
+        "x": 0,
+        "y": 588,
+        "right": 768,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "height": 1024,
+      "route": "thisweek",
+      "title": "This week | SCAAL Coffee",
+      "heading": "This week",
+      "paragraphs": 3,
+      "textLength": 701,
+      "active": [
+        "#thisweek"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "none",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 0,
+        "y": 76,
+        "right": 149,
+        "bottom": 588
+      },
+      "main": {
+        "x": 149,
+        "y": 76,
+        "right": 768,
+        "bottom": 588
+      },
+      "article": {
+        "x": 172.03125,
+        "y": 99.03125,
+        "right": 744.96875,
+        "bottom": 479.6875
+      },
+      "decoration": {
+        "x": 0,
+        "y": 588,
+        "right": 768,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "laptop",
+      "width": 1366,
+      "height": 900,
+      "route": "home",
+      "title": "Home | SCAAL Coffee",
+      "heading": "Welcome",
+      "paragraphs": 4,
+      "textLength": 453,
+      "active": [
+        "#home"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "flex",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 203,
+        "y": 76,
+        "right": 352,
+        "bottom": 588
+      },
+      "main": {
+        "x": 352,
+        "y": 76,
+        "right": 1163,
+        "bottom": 588
+      },
+      "article": {
+        "x": 384,
+        "y": 108,
+        "right": 907,
+        "bottom": 392.5
+      },
+      "decoration": {
+        "x": 203,
+        "y": 588,
+        "right": 1163,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "laptop",
+      "width": 1366,
+      "height": 900,
+      "route": "story",
+      "title": "Our Story | SCAAL Coffee",
+      "heading": "Our Story",
+      "paragraphs": 1,
+      "textLength": 490,
+      "active": [
+        "#story"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "flex",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 203,
+        "y": 76,
+        "right": 352,
+        "bottom": 588
+      },
+      "main": {
+        "x": 352,
+        "y": 76,
+        "right": 1163,
+        "bottom": 588
+      },
+      "article": {
+        "x": 384,
+        "y": 108,
+        "right": 907,
+        "bottom": 368.5
+      },
+      "decoration": {
+        "x": 203,
+        "y": 588,
+        "right": 1163,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "laptop",
+      "width": 1366,
+      "height": 900,
+      "route": "products",
+      "title": "Products | SCAAL Coffee",
+      "heading": "What makes SCAAL the best coffee?",
+      "paragraphs": 2,
+      "textLength": 525,
+      "active": [
+        "#products"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "flex",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 203,
+        "y": 76,
+        "right": 352,
+        "bottom": 588
+      },
+      "main": {
+        "x": 352,
+        "y": 76,
+        "right": 1163,
+        "bottom": 588
+      },
+      "article": {
+        "x": 384,
+        "y": 108,
+        "right": 907,
+        "bottom": 453.875
+      },
+      "decoration": {
+        "x": 203,
+        "y": 588,
+        "right": 1163,
+        "bottom": 778
+      }
+    },
+    {
+      "device": "laptop",
+      "width": 1366,
+      "height": 900,
+      "route": "thisweek",
+      "title": "This week | SCAAL Coffee",
+      "heading": "This week",
+      "paragraphs": 3,
+      "textLength": 701,
+      "active": [
+        "#thisweek"
+      ],
+      "overflow": false,
+      "brokenImages": [],
+      "coffeeDisplay": "flex",
+      "globeDisplay": "block",
+      "nav": {
+        "x": 203,
+        "y": 76,
+        "right": 352,
+        "bottom": 588
+      },
+      "main": {
+        "x": 352,
+        "y": 76,
+        "right": 1163,
+        "bottom": 588
+      },
+      "article": {
+        "x": 384,
+        "y": 108,
+        "right": 907,
+        "bottom": 501.25
+      },
+      "decoration": {
+        "x": 203,
+        "y": 588,
+        "right": 1163,
+        "bottom": 778
+      }
+    }
+  ],
+  "interactions": "passed",
+  "javascriptErrors": []
+}
