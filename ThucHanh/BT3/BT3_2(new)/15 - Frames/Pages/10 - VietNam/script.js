@@ -19,6 +19,8 @@ const musicState = document.querySelector(".music-state");
 
 function showState(playing) {
     musicToggle.setAttribute("aria-pressed", String(playing));
+    musicToggle.setAttribute("aria-label", playing ? "Tắt nhạc" : "Bật nhạc");
+    musicToggle.title = playing ? "Tắt nhạc" : "Bật nhạc";
     musicState.textContent = playing ? "Bật" : "Tắt";
 }
 
