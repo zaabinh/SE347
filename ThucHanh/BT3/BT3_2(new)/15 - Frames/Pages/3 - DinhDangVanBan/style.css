@@ -1,24 +1,15 @@
-h1 {
-    color: green;
-    text-align: center;
-}
-
-body {
-    display: grid;
-    place-items: center;
-}
-
-section {
-    font-size: 14px;
-}
-
-span.red {
-    color: red;
-}
-
-div.codebox {
-    background-color: rgb(168, 167, 167);
-    color: blue;
-    padding: 15px 50px;
-    line-height: 22px;
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 20px; }
+h1 { color: green; text-align: center; font-size: 36px; margin: 16px 0 24px; }
+section { width: 100%; max-width: 640px; margin: auto; font-size: 20px; }
+p { margin: 22px 0; line-height: 1.5; }
+span.red { color: red; }
+div.codebox { background: silver; color: blue; padding: 20px 32px; line-height: 1.7; overflow-wrap: anywhere; }
+code { font-size: 17px; }
+@media (max-width: 600px) {
+    body { padding: 24px 16px; }
+    h1 { font-size: 30px; }
+    section { font-size: 18px; }
+    div.codebox { padding: 16px; }
+    code { font-size: 14px; }
 }
