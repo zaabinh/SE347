@@ -89,6 +89,11 @@ button:active {
 
 .message {
     color: var(--red);
+    text-align: center;
+}
+
+.message[data-status="success"] {
+    color: #176b36;
 }
 
 .message:not(:empty) {
