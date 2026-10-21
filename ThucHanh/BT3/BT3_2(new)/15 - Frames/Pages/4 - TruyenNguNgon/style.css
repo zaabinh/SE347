@@ -1,41 +1,25 @@
-h1 {
-    border: 2px solid green;
-    color: orange;
-    padding: 1px;
-    text-align:center;
+* { box-sizing: border-box; }
+body { margin: 8px; font-size: 20px; line-height: 1.6; }
+h1 { border: 3px double limegreen; color: #d47700; padding: 0 4px; text-align: center; font-size: clamp(24px, 3vw, 40px); line-height: 1.25; margin: 18px 0 26px; }
+section { display: flow-root; }
+p { margin: 12px 0; }
+img { max-width: 100%; object-fit: contain; }
+.p1 > img { float: right; width: 160px; margin: 12px 8px 16px 18px; border: 1px solid #999; box-shadow: 3px 4px 3px #555; }
+.p2 > img { float: left; width: 240px; margin: 12px 16px 12px 0; border: 1px solid palevioletred; }
+span.big-character { color: green; font-size: 42px; font-style: italic; line-height: 1; }
+span.strong { font-style: italic; font-weight: bold; text-decoration: underline; background: orange; }
+h2 { background: lime; color: white; padding: 0 4px; text-align: right; font-size: 32px; text-shadow: 2px 2px 2px #333; }
+section:not(.p1):not(.p2) { display: flex; gap: 16px; align-items: flex-start; }
+section:not(.p1):not(.p2) p { flex: 1; min-width: 0; }
+section:not(.p1):not(.p2) img { width: 90px; height: auto; max-height: 100px; margin: 12px 0; }
+hr { border: 0; height: 2px; background: orange; }
+@media (max-width: 600px) {
+    body { font-size: 18px; }
+    .p1 > img { width: 32%; margin-left: 12px; }
+    .p2 > img { width: 44%; margin-right: 12px; }
+    h2 { font-size: 26px; }
 }
-
-span.big-character {
-    color: green;
-    font-size: 50px;
-    font-style: italic;
-}
-
-section {
-    display: flex;
-    gap: 10px;
-}
-
-span.strong {
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: underline;
-    background-color: orange;
-}
-
-p {
-    flex: 1;
-}
-
-h2 {
-    background-color: rgb(47, 255, 120);
-    color: white;
-    padding: 5px;
-    text-align: right;
-}
-
-hr {
-  border: none;               
-  height: 2px;                
-  background-color: orange;       
+@media (max-width: 360px) {
+    section:not(.p1):not(.p2) { gap: 8px; }
+    section:not(.p1):not(.p2) img { width: 60px; }
 }
