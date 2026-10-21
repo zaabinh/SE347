@@ -1,75 +1,49 @@
 @font-face {
-    font-family: 'Wedding';
-    src: url("fonts/UTM\ Wedding\ K&T.ttf");
+    font-family: Wedding;
+    src: url("fonts/UTM%20Wedding%20K%26T.ttf") format("truetype");
+    font-display: swap;
 }
-
+* { box-sizing: border-box; }
 body {
     margin: 0;
-    min-height: 710px;
-
+    min-height: 100vh;
+    padding: 16px;
     font-family: Arial, Helvetica, sans-serif;
-
-    background-image: url("hinh/nen-hoa-hong.jpg");
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: auto 700px;
+    background: url("hinh/nen-hoa-hong.jpg") right bottom / auto 90vh no-repeat;
 }
-
 h1 {
-    font-family: 'Wedding', sans-serif;
+    position: relative;
+    z-index: 1;
+    margin: 0 0 32px 34%;
+    font-family: Wedding, cursive;
     color: white;
-    text-shadow:
-        /* Viền + chiều sâu của chữ */
-        1px 1px 0 #ff9bd5,
-        2px 2px 0 #e85bab,
-        3px 3px 1px #c83b91,
-
-        /* Ánh sáng hồng */
-        0 0 4px #ff69b4,
-        0 0 8px #ff69b4,
-        0 0 14px #ffb3dd;
-    font-size: 50px;
+    text-shadow: 1px 1px 0 #ff9bd5, 2px 2px 0 #e85bab, 3px 3px 1px #c83b91, 0 0 4px #ff69b4, 0 0 8px #ff69b4, 0 0 14px #ffb3dd;
+    font-size: clamp(34px, 4vw, 56px);
+    font-weight: normal;
     text-align: center;
 }
-
-section {
-    display: flex;
+section { display: flex; align-items: flex-start; gap: 24px; }
+.binh-hoa { width: 34%; height: auto; margin-top: -50px; }
+.content { flex: 1; min-width: 0; line-height: 1.7; }
+.content ol { padding-left: 22px; margin: 0; }
+.content ol > li + li { margin-top: 16px; padding-top: 12px; border-top: 1px solid #aaa; }
+ul { padding-left: 36px; }
+ul.l1 { list-style-image: url("hinh/bullet-hoa-tim.png"); }
+ul.l2 { list-style-image: url("hinh/bullet-tron-hong.png"); }
+span.header { background: #e85bab; font-weight: bold; color: white; }
+span.pink { color: #8b159c; }
+small { color: #8b159c; font-size: 14px; }
+.copyright { margin: 24px 0 0 36px; }
+@media (max-width: 768px) {
+    body { padding: 20px 24px; background-size: auto 90vh; }
+    h1 { margin: 0 0 30px; font-size: clamp(27px, 8vw, 50px); }
+    .binh-hoa { display: none; }
+    section { display: block; }
+    .content { font-size: 18px; }
 }
-
-span.pink {
-    color: palevioletred;
-}
-
-small {
-    color:gray;
-}
-
-ul.l1 {
-    list-style-image: url("hinh/bullet-hoa-tim.png");
-}
-
-ul.l2 {
-    list-style-image: url("hinh/bullet-tron-hong.png");
-}
-
-span.header {
-    background-color: #e85bab;
-    font-weight: bold;
-    color: white;
-}
-
-hr {
-    width: 130%;
-}
-
-.binh-hoa {
-    width: 490px;
-}
-
-.content ol {
-    padding-left: 20px;
-}
-
-.copyright {
-    margin-left: 0;
+@media (max-width: 420px) {
+    body { padding: 20px 16px; }
+    .content { font-size: 16px; }
+    ul { padding-left: 24px; }
+    .copyright { margin-left: 12px; }
 }
