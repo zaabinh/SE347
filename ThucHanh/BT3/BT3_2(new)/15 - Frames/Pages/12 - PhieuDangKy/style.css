@@ -217,3 +217,12 @@ button:active {
         transition: none;
     }
 }
+
+
+/* Inline validation errors stay under their control in the same grid cell. */
+.field { min-width: 0; }
+.field-error { margin: 5px 0 0; color: #c00; font-size: 12px; line-height: 1.4; }
+.field-error[hidden] { display: none; }
+.field [aria-invalid="true"] { border: 1px solid #c00; }
+.field [aria-invalid="true"]:focus { outline: 1px solid #c00; box-shadow: 0 0 4px #cc000040; }
+.has-error .gender-input { border: 1px solid #c00; border-radius: 8px; padding: 4px; }
