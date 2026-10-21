@@ -5,79 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Bài tập ngôn ngữ HTML</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="layout">
-        <div class="top">
-            <header>
-                <h1>Bài tập ngôn ngữ HTML</h1>
-            </header>
+        <header class="top">
+            <div class="banner">
+                <h1 id="page-title">Bài tập ngôn ngữ HTML</h1>
+            </div>
 
-            <nav class="top-nav" aria-label="top">
-                <div class="top-nav-btn">Giới thiệu</div>
-                <details class="top-nav-btn dropdown">
+            <nav class="top-nav" aria-label="Điều hướng chính">
+                <a class="home-link" href="index.html" data-home aria-current="page">Giới thiệu</a>
+                <button class="menu-toggle" type="button" aria-label="Mở mục lục" aria-expanded="false" aria-controls="basic-menu tables-menu forms-menu">☰</button>
+                <details id="basic-menu" class="drop-down">
                     <summary>Cơ bản</summary>
                     <ul>
-                        <li>Mẹ</li>
-                        <li>Phú Quốc</li>
-                        <li>Định dạng văn bản</li>
-                        <li>Truyện ngụ ngôn</li>
-                        <li>Shop hoa tươi</li>
+                        <li><a href="Pages/1 - Me!/index.html" data-page="1">Mẹ</a></li>
+                        <li><a href="Pages/2 - PhuQuoc/index.html" data-page="2">Phú Quốc</a></li>
+                        <li><a href="Pages/3 - DinhDangVanBan/index.html" data-page="3">Định dạng văn bản</a></li>
+                        <li><a href="Pages/4 - TruyenNguNgon/index.html" data-page="4">Truyện ngụ ngôn</a></li>
+                        <li><a href="Pages/5 - ShopHoaTuoi/index.html" data-page="5">Shop hoa tươi</a></li>
                     </ul>
                 </details>
-                <details class="top-nav-btn dropdown">
+                <details id="tables-menu" class="drop-down">
                     <summary>Tables</summary>
                     <ul>
-                        <li>Excite@Home</li>
-                        <li>Chương trình học</li>
-                        <li>Double Rich</li>
-                        <li>Free.com</li>
-                        <li>Việt Nam</li>
+                        <li><a href="Pages/6 - Excite@Home/index.html" data-page="6">Excite@Home</a></li>
+                        <li><a href="Pages/7 - ChuongTrinhHoc/index.html" data-page="7">Chương trình học</a></li>
+                        <li><a href="Pages/8 - DoubleRich/index.html" data-page="8">Double Rich</a></li>
+                        <li><a href="Pages/9 - Free.com/index.html" data-page="9">Free.com</a></li>
+                        <li><a href="Pages/10 - VietNam/index.html" data-page="10">Việt Nam</a></li>
                     </ul>
                 </details>
-                <details class="top-nav-btn dropdown">
+                <details id="forms-menu" class="drop-down">
                     <summary>Forms</summary>
                     <ul>
-                        <li>Form đăng nhập</li>
-                        <li>Phiếu đăng ký</li>
-                        <li>Đặt tour</li>
+                        <li><a href="Pages/11 - FormDangNhap/index.html" data-page="11">Form đăng nhập</a></li>
+                        <li><a href="Pages/12 - PhieuDangKy/index.html" data-page="12">Phiếu đăng ký</a></li>
+                        <li><a href="Pages/13 - DatTour/index.html" data-page="13">Đặt tour</a></li>
                     </ul>
                 </details>
-
             </nav>
-        </div>
+        </header>
 
-        <div class="left">
-            <nav class="left-nav" aria-label="left">
+        <aside class="left">
+            <nav class="left-nav" aria-label="Mục lục bài tập">
                 <ul>
-                    <li class="left-nav-btn">Mẹ</li>
-                    <li class="left-nav-btn">Phú Quốc</li>
-                    <li class="left-nav-btn">Định dạng văn bản</li>
-                    <li class="left-nav-btn">Truyện ngụ ngôn</li>
-                    <li class="left-nav-btn">Shop hoa tươi</li>
-                    <li class="left-nav-btn">Excite@Home</li>
-                    <li class="left-nav-btn">Chương trình học</li>
-                    <li class="left-nav-btn">Double Rich</li>
-                    <li class="left-nav-btn">Free.com</li>
-                    <li class="left-nav-btn">Việt Nam</li>
-                    <li class="left-nav-btn">Form đăng nhập</li>
-                    <li class="left-nav-btn">Phiếu đăng ký</li>
-                    <li class="left-nav-btn">Đặt tour</li>
+                    <li><a href="Pages/1 - Me!/index.html" data-page="1">Mẹ</a></li>
+                    <li><a href="Pages/2 - PhuQuoc/index.html" data-page="2">Phú Quốc</a></li>
+                    <li><a href="Pages/3 - DinhDangVanBan/index.html" data-page="3">Định dạng văn bản</a></li>
+                    <li><a href="Pages/4 - TruyenNguNgon/index.html" data-page="4">Truyện ngụ ngôn</a></li>
+                    <li><a href="Pages/5 - ShopHoaTuoi/index.html" data-page="5">Shop hoa tươi</a></li>
+                    <li><a href="Pages/6 - Excite@Home/index.html" data-page="6">Excite@Home</a></li>
+                    <li><a href="Pages/7 - ChuongTrinhHoc/index.html" data-page="7">Chương trình học</a></li>
+                    <li><a href="Pages/8 - DoubleRich/index.html" data-page="8">Double Rich</a></li>
+                    <li><a href="Pages/9 - Free.com/index.html" data-page="9">Free.com</a></li>
+                    <li><a href="Pages/10 - VietNam/index.html" data-page="10">Việt Nam</a></li>
+                    <li><a href="Pages/11 - FormDangNhap/index.html" data-page="11">Form đăng nhập</a></li>
+                    <li><a href="Pages/12 - PhieuDangKy/index.html" data-page="12">Phiếu đăng ký</a></li>
+                    <li><a href="Pages/13 - DatTour/index.html" data-page="13">Đặt tour</a></li>
                 </ul>
             </nav>
-        </div>
+        </aside>
 
-        <div class="content">
-            <img class="avatar" src="images/avatar.jpg" alt="avatar">
-            <ul class="introduce">
-                <li>Họ và tên SV: Đoàn Hữu Gia Bình</li>
-                <li>Mã số SV: 24520192</li>
-                <li>Lớp: KHMT2024.1</li>
-            </ul>
-        </div>
-        
-        <div class="footer">&copy;2026</div>
+        <main class="content" id="main-content" aria-label="Nội dung bài tập">
+            <div id="home-content">
+                <img class="avatar" src="images/avatar.jpg" alt="Chân dung Đoàn Hữu Gia Bình">
+                <dl class="introduce">
+                    <div class="info-card">
+                        <dt>Họ và tên sinh viên</dt>
+                        <dd>Đoàn Hữu Gia Bình</dd>
+                    </div>
+                    <div class="info-card">
+                        <dt>Mã số sinh viên</dt>
+                        <dd>24520192</dd>
+                    </div>
+                    <div class="info-card">
+                        <dt>Lớp</dt>
+                        <dd>KHMT2024.1</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <iframe id="page-frame" title="Nội dung bài tập" hidden></iframe>
+        </main>
+
+        <footer class="footer">&copy;2026</footer>
     </div>
-
 </body>
 </html>
