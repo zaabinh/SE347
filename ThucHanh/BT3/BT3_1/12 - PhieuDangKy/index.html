@@ -12,41 +12,47 @@
         <div class="form-container">
             <form action="index.html" method="post" id="register-form">
                 <label for="fullname">Họ tên</label>
-                <input type="text" name="fullname" id="fullname" required>
+                <div class="field"><input type="text" name="fullname" id="fullname" required></div>
                 <label for="address">Địa chỉ</label>
-                <textarea name="address" id="address"></textarea>
+                <div class="field"><textarea name="address" id="address"></textarea></div>
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email">
+                <div class="field"><input type="email" name="email" id="email" required></div>
                 <label for="tel">Điện thoại</label>
-                <input type="tel" name="tel" id="tel" required pattern="[0-9]{10}" title="Số điện thoại gồm 10 chữ số">
-                <label for="gender">Giới tính</label>
-                <div class="gender-input">
-                    <input type="radio" name="gender" id="gender-male" value="Nam" required>
-                    <label for="gender-male">Nam</label>
-                    <input type="radio" name="gender" id="gender-female" value="Nữ">
-                    <label for="gender-female">Nữ</label>
+                <div class="field"><input type="tel" name="tel" id="tel" required pattern="[0-9]{10}" title="Số điện thoại gồm 10 chữ số"></div>
+                <label id="gender-label">Giới tính</label>
+                <div class="field" data-label="Giới tính">
+                    <div class="gender-input" role="radiogroup" aria-labelledby="gender-label">
+                        <input type="radio" name="gender" id="gender-male" value="Nam" required>
+                        <label for="gender-male">Nam</label>
+                        <input type="radio" name="gender" id="gender-female" value="Nữ">
+                        <label for="gender-female">Nữ</label>
+                    </div>
                 </div>
                 <label for="occupation">Nghề nghiệp</label>
-                <select name="occupation" id="occupation">
-                    <option value="doctor">Bác sĩ</option>
-                    <option value="engineer">Kỹ sư</option>
-                    <option value="teacher">Giáo viên</option>
-                    <option value="student">Sinh viên</option>
-                    <option value="other" id="other-option">Khác</option>
-                </select>
+                <div class="field">
+                    <select name="occupation" id="occupation">
+                        <option value="doctor">Bác sĩ</option>
+                        <option value="engineer">Kỹ sư</option>
+                        <option value="teacher">Giáo viên</option>
+                        <option value="student">Sinh viên</option>
+                        <option value="other" id="other-option">Khác</option>
+                    </select>
+                    </div>
                 <label for="product">Chọn sản phẩm</label>
-                <select name="product" id="product" size="4" required>
-                    <option value="1">Kem đánh răng</option>
-                    <option value="2">Dầu gội</option>
-                    <option value="3">Sữa tắm</option>
-                    <option value="4">Bột giặt</option>
-                </select>
+                <div class="field">
+                    <select name="product" id="product" size="4" required>
+                        <option value="1">Kem đánh răng</option>
+                        <option value="2">Dầu gội</option>
+                        <option value="3">Sữa tắm</option>
+                        <option value="4">Bột giặt</option>
+                    </select>
+                    </div>
                 <label for="prediction">Dự đoán số người tham gia</label>
-                <input type="number" name="prediction" id="prediction" min="0">
+                <div class="field"><input type="number" name="prediction" id="prediction" min="0"></div>
                 <button type="submit" id="submit">Đăng ký</button>
                 <button type="reset" id="reset">Làm lại</button>
             </form>
-            <p id="message"></p>
+            <p id="message" role="status"></p>
         </div>
     </body>
 </html>
