@@ -56,11 +56,25 @@ body {
   background: white;
   font-weight: bold;
   text-decoration: none;
+  border-right: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background-color: var(--gold);
+  transform: translateX(-4px);
+  border-right: 1px solid #777;
 }
 
 .site-nav a[aria-current="page"] {
   background: var(--gold);
   border-right-color: var(--gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav a { transition: none; }
+  .site-nav a:hover, .site-nav a:focus-visible { transform: none; }
 }
 
 a:focus-visible {

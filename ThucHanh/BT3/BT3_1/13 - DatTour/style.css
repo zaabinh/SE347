@@ -1,234 +1,170 @@
 :root {
-    --orange: rgb(255, 152, 0);
-    --field-orange: rgba(255, 166, 0, 0.3);
+    --orange: #ff9800;
+    --field-orange: #ffa6004d;
     --blue: blue;
+    --error: #c00;
 }
 
+* { box-sizing: border-box; }
 body {
-    background: url("hinh/bg3.jpg") center / cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
     padding: 24px 8px 16px;
     font-family: Arial, Helvetica, sans-serif;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    background: url("hinh/bg3.jpg") center / cover no-repeat fixed;
 }
-
 h1 {
     color: var(--orange);
-    text-shadow: 1px 1px 1px white,
-                1px 2px 3px white,
-                0 0 3px #335;
+    text-shadow: 1px 1px 1px white, 1px 2px 3px white, 0 0 3px #335;
     text-transform: uppercase;
     text-align: center;
 }
-
 .form-container {
-    box-sizing: border-box;
-    width: 765px;
-    max-width: 100%;
-    border-radius: 12px;
-    border: 1px solid white;
-    box-shadow: 4px 5px 6px white;
-    animation: rise-in 0.5s ease-out;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: min(765px, 100%);
     padding: 8px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background: #ffffff80;
+    box-shadow: 4px 5px 6px white;
     color: var(--blue);
     font-weight: bold;
     text-shadow: 1px 1px 1px white;
+    animation: rise-in 0.5s ease-out;
 }
 
-/* One grid for the whole form: every label shares the same column */
+/* Shared form columns; wrappers keep errors below their controls. */
 #register-form {
     display: grid;
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 10rem minmax(0, 1fr);
     justify-items: start;
     align-items: center;
     gap: 28px 24px;
     padding: 8px;
 }
-
-.form-row {
-    display: contents;
-}
-
-label, .group-label {
-    justify-self: end;
-}
-
+.form-row { display: contents; }
+label, .group-label { justify-self: end; }
+.field { min-width: 0; max-width: 100%; }
 input:not([type="checkbox"], [type="radio"]), select, textarea {
-    box-sizing: border-box;
     max-width: 100%;
-    background-color: var(--field-orange);
-    border-radius: 8px;
-    border: 1px solid white;
     padding: 5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: var(--field-orange);
     font: inherit;
     color: inherit;
     text-shadow: inherit;
     transition: background-color 0.2s, box-shadow 0.2s;
 }
-
 input:focus, select:focus, textarea:focus {
-    background-color: rgba(255, 166, 0, 0.45);
+    background-color: #ffa60073;
     box-shadow: 0 0 8px var(--orange);
 }
-
-/* Dropdown list: drop the white text-shadow and bold inherited from the form */
 optgroup, option {
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
+    background: white;
     color: black;
+    font: normal 1em Arial, Helvetica, sans-serif;
     text-shadow: none;
-    background-color: white;
 }
-
-optgroup {
-    font-weight: bold;
-    color: var(--blue);
-}
-
-option {
-    font-weight: normal;
-}
-
-input[type="checkbox"], input[type="radio"] {
-    accent-color: var(--blue);
-}
-
-#fullname {
-    width: 15rem;
-}
-
-#address {
-    width: 26.5rem;
-    height: 4rem;
-}
-
-#tel, #adults, #children {
-    width: 12.5rem;
-}
-
-#note {
-    width: 26.5rem;
-    height: 6rem;
-}
-
-.transport-input {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px 6px;
-}
-
-.transport-input label {
-    margin-right: 6px;
-}
-
+optgroup { color: var(--blue); font-weight: bold; }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--blue); }
+#fullname { width: 15rem; }
+#address, #note { width: 26.5rem; height: 4rem; }
+#note { height: 6rem; }
+#tel { width: 12.5rem; }
+.transport-input, .guest-row { display: flex; flex-wrap: wrap; align-items: center; }
+.transport-input { gap: 4px 6px; }
+.transport-input label { margin-right: 6px; }
 .guest-group {
     grid-column: 1 / -1;
     justify-self: stretch;
+    min-width: 0;
     margin: 0;
     padding: 24px 8px;
-    border: 1px solid rgb(161, 153, 164);
+    border: 1px solid #a199a4;
 }
-
-.guest-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-}
-
+.guest-row { gap: 8px 16px; }
 .guest-field {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
+    flex: 1 1 280px;
     gap: 8px;
+    min-width: 0;
 }
+.guest-field input { width: 100%; }
+
+/* Validation follows the base input rules so the red border wins. */
+.field-error { margin: 5px 0 0; color: var(--error); font-size: 12px; font-weight: normal; line-height: 1.4; text-shadow: none; }
+.field-error[hidden] { display: none; }
+.field [aria-invalid="true"], .transport-input.has-error { border: 1px solid var(--error); }
+.field [aria-invalid="true"]:focus { outline: 1px solid var(--error); box-shadow: 0 0 4px #cc000040; }
+.transport-input.has-error { padding: 4px; border-radius: 8px; }
+.transport-input .field-error { flex-basis: 100%; }
 
 button {
     grid-column: 1 / -1;
     justify-self: center;
-    padding: 8px 10px;
-    color: white;
-    background: var(--orange);
-    font-weight: bold;
+    padding: 8px 12px;
     border: 0;
     border-radius: 8px;
+    background: var(--orange);
+    color: white;
+    font-weight: bold;
     cursor: pointer;
     transition: transform 0.15s, box-shadow 0.15s;
 }
+button:hover { transform: translateY(-2px); box-shadow: 0 4px 8px #0003; }
+button:focus-visible { outline: 2px solid #744600; outline-offset: 3px; }
+button:active { transform: scale(0.97); }
 
-button:hover, button:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-#message {
-    margin: 0 0 8px;
+/* Modal resets the blue text and white shadow inherited from the form. */
+#success-dialog {
+    width: min(400px, calc(100% - 24px));
+    max-height: 85vh;
+    max-height: 85dvh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-weight: normal;
     text-align: center;
-    color: red;
+    text-shadow: none;
+    box-shadow: 0 8px 24px #0003;
 }
+#success-dialog[open] { animation: pop-in 0.22s ease-out; }
+#success-dialog::backdrop { background: #0006; }
+#dialog-title { margin: 0 0 6px; font-size: 20px; line-height: 1.3; }
+#success-dialog > p { margin: 0 0 12px; color: #666; font-size: 13px; line-height: 1.4; }
+#register-result { text-align: left; }
+#register-result p {
+    margin: 0;
+    padding: 6px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+#register-result p + p { border-top: 1px solid #eee; }
+#register-result strong { font-weight: 600; }
+#close-dialog { margin-top: 12px; padding: 8px 24px; background: #ffb44a; color: #412900; font: 600 13px Arial, Helvetica, sans-serif; }
 
-#message:not(:empty) {
-    animation: pop-in 0.4s ease-out;
-}
-
-@keyframes rise-in {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-}
-
-@keyframes pop-in {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-}
+@keyframes rise-in { from { opacity: 0; transform: translateY(16px); } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(8px) scale(0.97); } }
 
 @media (max-width: 600px) {
-    #register-form {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
-    label, .group-label {
-        justify-self: start;
-        margin-top: 8px;
-    }
-
-    .transport-input label, .guest-field label {
-        margin-top: 0;
-    }
-
-    #fullname, #address, #tel, #note, select {
-        width: 100%;
-    }
-
-    .guest-row {
-        flex-direction: column;
-    }
-
-    .guest-field input {
-        flex: 1;
-    }
-
-    button {
-        width: 100%;
-        margin-top: 12px;
-    }
+    #register-form { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    label, .group-label { justify-self: start; margin-top: 8px; }
+    .transport-input label, .guest-field label { margin-top: 0; }
+    .field, #fullname, #address, #tel, #note, select { width: 100%; }
+    .guest-field { flex-basis: 100%; }
+    #submit { width: 100%; margin-top: 12px; }
 }
-
 @media (prefers-reduced-motion: reduce) {
-    .form-container, input, select, textarea, button, #message {
-        animation: none;
-        transition: none;
-    }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
 }

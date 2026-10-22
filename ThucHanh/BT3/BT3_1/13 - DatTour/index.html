@@ -13,15 +13,15 @@
             <form action="index.html" method="post" id="register-form">
                 <div class="form-row">
                     <label for="fullname">Họ tên</label>
-                    <input type="text" name="fullname" id="fullname" required>
+                    <div class="field"><input type="text" name="fullname" id="fullname" required></div>
                     <label for="address">Địa chỉ</label>
-                    <textarea name="address" id="address"></textarea>
+                    <div class="field"><textarea name="address" id="address" required></textarea></div>
                     <label for="tel">Điện thoại</label>
-                    <input type="tel" name="tel" id="tel" required pattern="[0-9]{10}" title="Số điện thoại gồm 10 chữ số">
+                    <div class="field"><input type="tel" name="tel" id="tel" required pattern="[0-9]{10}" title="Số điện thoại gồm 10 chữ số" required></div>
                     <label for="vietnamese">Khách Việt Nam</label>
-                    <input type="checkbox" name="vietnamese" id="vietnamese" value="Có">
+                    <div class="field"><input type="checkbox" name="vietnamese" id="vietnamese" value="Có"></div>
                     <label for="tour">Chọn tour</label>
-                    <select name="tour" id="tour" required>
+                    <div class="field"><select name="tour" id="tour" required>
                         <optgroup label="Miền Bắc">
                             <option value="mb1">Hà Nội - Hạ Long - Sapa</option>
                             <option value="mb2">Hà Nội - Chùa Hương - Ninh Bình</option>
@@ -36,9 +36,9 @@
                             <option value="mn1">TpHCM - Cần Thơ - Cà Mau</option>
                             <option value="mn2">Phú Quốc - Côn Đảo</option>
                         </optgroup>
-                    </select>
-                    <span class="group-label" id="transport-label">Phương tiện</span>
-                    <div class="transport-input" role="radiogroup" aria-labelledby="transport-label">
+                    </select></div>
+                    <label class="group-label" id="transport-label" for="transport-plane">Phương tiện</label>
+                    <div class="transport-input field" role="radiogroup" aria-labelledby="transport-label">
                         <input type="radio" name="transport" id="transport-plane" value="Máy bay" required>
                         <label for="transport-plane">Máy bay</label>
                         <input type="radio" name="transport" id="transport-travel-bus" value="Xe du lịch">
@@ -48,27 +48,33 @@
                     </div>
                 </div>
                 <fieldset class="guest-group">
-                    <legend>Số lượng khách đoàn</legend>
+                    <legend><label for="adults">Số lượng khách đoàn</label></legend>
 
                     <div class="guest-row">
                         <div class="guest-field">
                             <label for="adults">Người lớn</label>
-                            <input type="number" id="adults" name="adults" value="1" min="1">
+                            <div class="field"><input type="number" id="adults" name="adults" value="1" min="1" required></div>
                         </div>
 
                         <div class="guest-field">
                             <label for="children">Trẻ em</label>
-                            <input type="number" id="children" name="children" value="1" min="0">
+                            <div class="field"><input type="number" id="children" name="children" value="0" min="0"></div>
                         </div>
                     </div>
                 </fieldset>
                 <div class="form-row">
                     <label for="note">Ghi chú thêm</label>
-                    <textarea name="note" id="note"></textarea>
+                    <div class="field"><textarea name="note" id="note"></textarea></div>
                 </div>
                 <button type="submit" id="submit">Đồng ý</button>
+                <dialog id="success-dialog" aria-labelledby="dialog-title">
+                    <h2 id="dialog-title" tabindex="-1" autofocus>Đăng ký thành công</h2>
+                    <p>Bạn đã đăng ký thành công!!!</p>
+                    <div id="register-result"></div>
+                <button type="button" id="close-dialog">Đóng</button>
+            </dialog>
             </form>
-            <p id="message"></p>
+            
         </div>
     </body>
 </html> 

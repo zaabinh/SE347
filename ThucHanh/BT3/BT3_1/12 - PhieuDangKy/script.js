@@ -36,11 +36,11 @@ function validateField(field) {
     const missing = control.validity.valueMissing ||
         (control.required && control.type === "text" && !control.value.trim());
     let error = "";
-    if (missing) error = `Please enter ${label}`;
-    else if (control.validity.typeMismatch) error = `Please enter a valid ${label}`;
-    else if (control.validity.patternMismatch) error = "Please enter a 10-digit phone number";
-    else if (control.validity.rangeUnderflow) error = `Please enter a value of at least ${control.min}`;
-    else if (!control.validity.valid) error = `Please enter a valid ${label}`;
+    if (missing) error = `Vui lòng nhập ${label}`;
+    else if (control.validity.typeMismatch) error = `${label} không hợp lệ`;
+    else if (control.validity.patternMismatch) error = "Vui lòng nhập số điện thoại có 10 chữ số";
+    else if (control.validity.rangeUnderflow) error = `Giá trị nhỏ nhất là ${control.min}`;
+    else if (!control.validity.valid) error = `${label} không hợp lệ`;
     showError(field, error);
     return !error;
 }
@@ -56,6 +56,7 @@ fields.forEach(field => {
 form.addEventListener("submit", event => {
     event.preventDefault();
     message.textContent = "";
+    // Check every fields validation
     const invalid = fields.filter(field => !validateField(field));
     if (invalid.length) {
         // Focus also scrolls the first missing/invalid input into view.
@@ -63,13 +64,17 @@ form.addEventListener("submit", event => {
         return;
     }
 
+    // Add input values to URL bar
     const query = new URLSearchParams(new FormData(form)).toString();
     history.pushState(null, "", "?" + query);
+
+    // Notice send successfully
     message.textContent = "Phiếu đăng ký của bạn đã được gửi đi";
 });
 
 form.addEventListener("reset", () => {
     fields.forEach(field => showError(field));
     message.textContent = "";
+    fields[0].control.focus();
     history.replaceState(null, "", location.pathname);
 });
