@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SE-UIT-VNUHCM</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Nạp Bootstrap để sử dụng hệ thống lưới, thành phần giao diện và các tiện ích CSS. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    /* Các kiểu bổ sung cho cuộn trang, thanh điều hướng và nút quay lại đầu trang. */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      padding-top: 56px;
+    }
+
+    .navbar {
+      background-color: #2d5282;
+    }
+
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: white;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 1030;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu > .dropdown-menu {
+      top: 0;
+      right: 100%;
+      left: auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .dropdown-submenu > .dropdown-menu {
+        position: static;
+        margin-left: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Thanh điều hướng cố định ở đầu trang; menu News có thêm một cấp danh mục. -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="https://se.uit.edu.vn" target="_blank" rel="noopener noreferrer">
+      SE-UIT-VNUHCM
+    </a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#top">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+             data-bs-auto-close="outside" aria-expanded="false">
+            News
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Overview</a></li>
+            <li class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Departments of
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Software Development</a></li>
+                <li><a class="dropdown-item" href="#">Virtual MT &amp; PT Game</a></li>
+                <li><a class="dropdown-item" href="#">Multimedia Communications</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-item" href="#">Science - Technology</a></li>
+            <li><a class="dropdown-item" href="#">Featured Events</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-info text-white rounded-pill px-4" href="#">Sign up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Phần giới thiệu nổi bật gồm tiêu đề, thông điệp và ảnh banner. -->
+<div id="top" class="container-fluid p-5 bg-primary text-white">
+  <div class="row align-items-center">
+
+    <div class="col-md-6">
+      <h1>Better for your future</h1>
+      <p>Joy is not a destination, but a part of journey</p>
+    </div>
+
+    <div class="col-md-6 text-end">
+      <img src="images/banner.png" class="img-fluid" alt="Ảnh" width="200px">
+    </div>
+
+  </div>
+</div>
+  
+<!-- Tiêu đề giới thiệu khu vực thông tin liên hệ. -->
+<div id="contact" class="container-fluid text-center mt-5">
+    <div class="row align-items-center">
+        <h4>CONTACT</h4>
+        <p> Let us know what you want, and we will serve you well!</p>
+    </div>
+</div>
+
+<!-- Khu vực liên hệ chia thành thông tin của khoa và biểu mẫu gửi phản hồi. -->
+<div class="container-fluid mt-5 px-5">
+  <div class="row g-4 align-items-stretch">
+
+    <!-- Cột bên trái hiển thị địa chỉ, số điện thoại, email và ảnh đơn vị. -->
+    <div class="col-sm-4">
+      <div class="border-top border-bottom border-primary
+                  border-2 h-100 p-3">
+
+        <div>
+          <img src="images/location.png"
+               class="float-start me-3" width="50">
+          <p class="fw-bold text-primary text-start">Address:</p>
+          <p class="text-start">
+            Room E7.2, Building E, UIT, Linh Xuan, HCMC
+          </p>
+        </div>
+
+        <div class="clearfix">
+          <img src="images/telephone.png"
+               class="float-start me-3" width="50">
+          <p class="fw-bold text-primary text-start">Call us:</p>
+          <p class="text-start">
+            (023) 37252002 - internal 120
+          </p>
+        </div>
+
+        <div class="clearfix">
+          <img src="images/envelope.png"
+               class="float-start me-3" width="50">
+          <p class="fw-bold text-primary text-start">Email us:</p>
+          <p class="text-start">se@uit.edu.vn</p>
+        </div>
+
+        <img src="images/SE-UIT.jpg"
+             class="img-fluid mt-3" width="300">
+
+      </div>
+    </div>
+
+    <!-- Cột bên phải thu thập thông tin người gửi và nội dung phản hồi. -->
+    <div class="col-sm-8">
+      <div class="border-top border-bottom border-primary
+                  border-2 h-100 p-3">
+
+        <form action="feedback.php" method="POST">
+
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <label for="name" class="form-label">
+                Your Name
+              </label>
+              <input type="text" class="form-control"
+                     id="name" name="name" value="Võ Hoài Chiều" required>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+              <label for="email" class="form-label">
+                Your Email
+              </label>
+              <input type="email" class="form-control"
+                     id="email" name="email" value="24520220@gm.uit.edu.vn" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="subject" class="form-label">
+              Subject
+            </label>
+            <input type="text" class="form-control"
+                   id="subject" name="subject" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label ">
+              Message
+            </label>
+            <textarea class="form-control"
+                      id="message" name="message"
+                      rows="8" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary rounded-pill">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Biểu mẫu đăng ký nhận tin tức mới qua email. -->
+<div class="container-fluid mt-5 bg-light text-center">
+    <h4 style="color: blue ;">Join Our Newsletter</h4>
+    <p> Subcribe to our newsletter and receive the latest news about our products and services</p>
+     <form action="/subscribe.php" method="POST">
+    <div class="input-group mx-auto rounded-pill overflow-hidden shadow"
+         style="max-width: 420px; background: white;">
+      
+      <input type="email"
+             class="form-control border-0 px-4">
+
+      <button type="submit"
+              class="btn btn-primary text-white rounded-pill px-4">
+        Subscribe
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Chân trang gồm các nhóm liên kết và biểu tượng mạng xã hội. -->
+<div class="container-fluid mt-5 text-center">
+    <div class="row">
+        <div class="col-sm-3 ">
+          <p>SE - UIT</p>
+        </div>
+        <div class="col-sm-3 ">
+          <p>Useful links</p>
+        </div>
+        <div class="col-sm-3 ">
+          <p>Our Serviecs</p>
+        </div>
+        <div class="col-sm-3 ">
+          <p>Follow us</p>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="images/x-twitter.svg" width="30" class="rounded-circle" alt="X">
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="images/facebook.svg" width="30" class="rounded-circle" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="images/instagram.svg" width="30" class="rounded-circle" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="images/linkedin-in.svg" width="30" class="rounded-circle" alt="LinkedIn">
+          </a>
+        </div>
+    </div>
+</div>
+
+<!-- Liên kết cố định giúp người dùng cuộn nhanh về phần đầu trang. -->
+<a class="back-to-top btn btn-primary" href="#top" aria-label="Scroll to top" title="Scroll to top">
+  &uarr;
+</a>
+<!-- Thông tin bản quyền và ghi công thiết kế ở cuối trang. -->
+<div class="container-fluid text-center">
+    <p>Copyright <span><b>Information Technology center</b></span>. All rights reserved</p>
+    <p>Design by <span style="color: aqua;">Web Design Midtern Test</span></p>
+</div>
+</body>
+</html>

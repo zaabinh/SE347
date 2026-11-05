@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AirRed | Bay nhanh - Giá rẻ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Nạp Bootstrap để sử dụng hệ thống lưới, thành phần giao diện và các tiện ích CSS. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    /* Các kiểu bổ sung cho cuộn trang, thanh điều hướng và nút quay lại đầu trang. */
+    html {
+      scroll-behavior: smooth;
+    }
+
+     #top {
+        background-image:
+            linear-gradient(
+                rgba(192, 0, 0, 0.7),
+                rgba(192, 0, 0, 0.7)
+            ),
+            url("images/map_bg.avif");
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 300px;
+    }
+
+    body {
+      padding-top: 56px;
+      background-color: rgb(244, 220, 236);
+    }
+
+    .navbar {
+      background-color: #C00000;
+      min-height:auto;
+      --bs-navbar-hover-color: white;
+      --bs-navbar-brand-hover-color: white;
+    }
+
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: white;
+    }
+
+    .search-container {
+        margin-top: -40px;
+    }
+    
+    button, a {
+      transition: opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-dat-ve,
+    .btn-tim-chuyen-bay {
+      --bs-btn-bg: #C00000;
+      --bs-btn-hover-bg: #C00000;
+    }
+
+    button:hover, a.btn:hover {
+      filter: brightness(1.2);
+    }
+
+    .back-to-top {
+      --bs-btn-hover-bg: var(--bs-btn-bg);
+    }
+
+    a:not(.btn):hover {
+      opacity: 0.65;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      button, a {
+        transition: none;
+      }
+    }
+    .back-to-top {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 1030;
+      width: 0rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    
+  </style>
+</head>
+<body>
+<!-- Thanh điều hướng cố định ở đầu trang; menu News có thêm một cấp danh mục. -->
+<nav class="navbar navbar-expand-lg fixed-top ">
+  <div class="container-fluid">
+    <a class ="navbar-brand" href="#" target="_blank" rel="noopener noreferrer">
+        <img src="images/white-air-logo.png" class="img-fluid" alt="brand" width="50" >
+    </a>
+    <a class="navbar-brand fw-bold" href="#" target="_blank" rel="noopener noreferrer">
+      AirRed
+    </a>
+    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#top">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#chuyenbay">Chuyến bay</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Khuyến mãi</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Liên hệ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Phần giới thiệu nổi bật gồm tiêu đề, thông điệp và ảnh banner. -->
+<div id="top" class="container-fluid p-5  text-white text-center ">
+      <h1>Đặt vé máy bay dễ dàng & nhanh chóng</h1>
+      <p>Giá tốt mỗi ngày - Trải nghiệm tiện lợi cùng AirRed</p>
+</div>
+
+  
+<!-- Tiêu đề giới thiệu khu vực thông tin liên hệ. -->
+<div id="chuyenbay" class="container position-relative search-container">
+    <div class="bg-white rounded-3 shadow text-center p-4">
+        <h4><span style="color: red;">Tìm chuyến bay của bạn</span></h4>
+        <form>
+            <div class ="row g-3 align-items-end text-start p-3">
+                <div class ="col-md-3">
+                    <label for="diemdi" class="form-label fw-semibold">
+                        Điểm đi
+                    </label>
+                    <select id="diemdi" name="diemdi" class="form-select">
+                        <optgroup label="Việt Nam (10)">
+                            <option value="SGN" selected>Tp. Hồ Chí Minh</option>
+                            <option value="HAN">Hà Nội</option>
+                            <option value="HUI">Huế</option>
+                            <option value="DAD">Đà Nẵng</option>
+                            <option value="UIH">Quy Nhơn</option>
+                            <option value="DLI">Đà Lạt</option>
+                            <option value="CXR">Nha Trang</option>
+                            <option value="VCS">Côn Đảo</option>
+                            <option value="VCA">Cần Thơ</option>
+                            <option value="PQC">Phú Quốc</option>
+                        </optgroup>
+                        <optgroup label="Úc (5)">
+                            <option value="ADL">Adelaide</option>
+                            <option value="BNE">Brisbane</option>
+                            <option value="MEL">Melbourne</option>
+                            <option value="PER">Perth</option>
+                            <option value="SYD">Sydney</option>
+                        </optgroup>
+                        <optgroup label="Thái Lan (6)">
+                            <option value="BKK">Bangkok</option>
+                            <option value="CNX">Chiang Mai</option>
+                            <option value="CEI">Chiang Rai</option>
+                            <option value="HDY">Hat Yai</option>
+                            <option value="HKT">Phuket</option>
+                            <option value="UTH">Udon Thani</option>
+                        </optgroup>
+                        <optgroup label="Hàn Quốc (3)">
+                            <option value="PUS">Busan</option>
+                            <option value="TAE">Daegu</option>
+                            <option value="ICN">Seoul</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class ="col-md-3">
+                    <label for="diemden" class="form-label fw-semibold">
+                        Điểm đến
+                    </label>
+                    <select id="diemden" name="diemden" class="form-select">
+                        <optgroup label="Việt Nam (10)">
+                            <option value="SGN">Tp. Hồ Chí Minh</option>
+                            <option value="HAN" selected>Hà Nội</option>
+                            <option value="HUI">Huế</option>
+                            <option value="DAD">Đà Nẵng</option>
+                            <option value="UIH">Quy Nhơn</option>
+                            <option value="DLI">Đà Lạt</option>
+                            <option value="CXR">Nha Trang</option>
+                            <option value="VCS">Côn Đảo</option>
+                            <option value="VCA">Cần Thơ</option>
+                            <option value="PQC">Phú Quốc</option>
+                        </optgroup>
+                        <optgroup label="Úc (5)">
+                            <option value="ADL">Adelaide</option>
+                            <option value="BNE">Brisbane</option>
+                            <option value="MEL">Melbourne</option>
+                            <option value="PER">Perth</option>
+                            <option value="SYD">Sydney</option>
+                        </optgroup>
+                        <optgroup label="Thái Lan (6)">
+                            <option value="BKK">Bangkok</option>
+                            <option value="CNX">Chiang Mai</option>
+                            <option value="CEI">Chiang Rai</option>
+                            <option value="HDY">Hat Yai</option>
+                            <option value="HKT">Phuket</option>
+                            <option value="UTH">Udon Thani</option>
+                        </optgroup>
+                        <optgroup label="Hàn Quốc (3)">
+                            <option value="PUS">Busan</option>
+                            <option value="TAE">Daegu</option>
+                            <option value="ICN">Seoul</option>
+                        </optgroup>
+                    </select>
+
+                </div>
+
+                <div class ="col-md-2">
+                    <label for="ngaydi" class="form-label fw-semibold">
+                        Ngày đi
+                    </label>
+                    <input type="date" id="ngaydi" class="form-control" >
+                </div>
+
+                <div class ="col-md-2">
+                    <label for="ngayve" class="form-label fw-semibold">
+                        Ngày về
+                    </label>
+                    <input type="date" id="ngayve" class="form-control" >
+                </div>
+
+                <div class ="col-md-2">
+                    <button type="submit" class="btn btn-tim-chuyen-bay text-white w-100 fw-semibold">
+                        Tìm chuyến bay
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h4 class ="mb-4"><span style="color: red;">Kết quả gợi ý</span></h4>
+
+    <div class="container">
+    <div class=" row g-4">
+        <div class ="col-md-4">
+            <div class ="border rounded-4 p-3 shadow h-100 bg-white">
+                <h5><span><b>Hà Nội → Tp.Hồ Chí Minh</b></span> </h5>
+                <p>Khởi hành 07:00 | Hãng: VietNam Airlines</p>
+                <h5 class="fw-bold"><span style="color: #C00000;">1.500.000 VND</span></h5>
+                <button type="submit" class="btn btn-dat-ve text-white w-100 fw-bold">
+                    Đặt vé
+                </button>
+            </div>
+         </div>
+        <div class="col-md-4">
+            <div class="border rounded-4 p-3 shadow h-100 bg-white">
+                <h5><span><b>Đà Nẵng → Hà Nội</b></span> </h5>
+                <p>Khởi hành 09:45 | Hãng: Vietjet Air</p>
+                <h5 class="fw-bold"><span style="color: #C00000;">990.000 VND</span></h5>
+                <button type="submit" class="btn btn-dat-ve text-white w-100 fw-bold">
+                        Đặt vé
+                </button>
+            </div>
+        </div>
+        
+     <div class ="col-md-4">
+        <div class="border rounded-4 p-3 shadow h-100 bg-white ">
+            <h5><span><b>Tp.Hồ Chí Minh → Phú Quốc</b></span> </h5>
+            <p>Khởi hành 12:30 | Hãng: Bamboo Airways</p>
+            <h5 class ="fw-bold"><span style="color: #C00000;">1.250.000 VND</span></h5>
+            <button type="submit" class="btn btn-dat-ve text-white w-100 fw-bold">
+                    Đặt vé
+            </button>
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
+
+
+<!-- Liên kết cố định giúp người dùng cuộn nhanh về phần đầu trang. -->
+<a class="back-to-top btn btn-light" href="#top" aria-label="Scroll to top" title="Scroll to top">
+  &uarr;
+</a>    
+<!-- Thông tin bản quyền và ghi công thiết kế ở cuối trang. -->
+<div class="container-fluid text-center text-white bg-danger pt-3 pb-3 mt-5">
+   <p>©2025 AirRed Airlines | Hotline: 1900 6789 | Email: support@airred.vn</p>
+</div>
+</body>
+</html>
