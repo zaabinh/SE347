@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Form đăng nhập</title>
+<link rel="stylesheet" type="text/css" href="dangnhap.css">
+<script src = "scripts/dangnhap.js"></script>
+</head>
+<body onload="txtUser.focus();">
+    <form id="form1" name="form1" method="post" action="xulydangnhap.php">
+    <table id="mytable">
+        <tr>
+            <td colspan="2" align="right">
+                <h1>Form đăng nhập</h1>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Tên người dùng</td>
+            <td align="left">
+                <input name="txtUser" type="text" class="txt" id="txtUser" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">Mật khẩu</td>
+            <td align="left">
+                <input name="txtPass" type="password" class="txt" id="txtPass" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input name="btnDangNhap" type="submit" class="btn" id="btnDangNhap"
+                    value="Đăng nhập" onClick="return KiemTraNhapLieu();" />
+                <input name="btnNhapLai" type="reset" class="btn" id="btnNhapLai"
+                    value="Nhập lại" onClick="NhapLai();" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label id="lblThongBao"></label>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

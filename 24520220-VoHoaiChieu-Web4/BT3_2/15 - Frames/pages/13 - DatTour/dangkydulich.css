@@ -1,0 +1,45 @@
+/* CSS Document */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color: #2012e2;
+    font-weight: bold;
+    font-weight: bord;
+    background: url(hinh/bg1.jpg) center no-repeat fixed;
+    background-size: cover;
+    
+}
+.tieude{
+    text-shadow: 2px 2px 2px white, 0 0 25px white, 0 0 5px #ffffff;
+    color:#ff9900;
+    text-align: center;
+
+}.mytable{
+    width: 40%;
+    box-shadow: 0px 0px 10px #ffffff, -2px -2px 2px #33ccff;
+    border-radius:20px;
+    background-color: rgba(255,255,255,0.5);
+    border:1px solid #FFFFFF;
+   
+}
+
+.txt{
+    border: 1px solid #FFFFFF ;
+    border-radius: 10px;
+    background-color: rgba(255,153,0,0.25);
+    color: #0000FF;
+    padding: 5px;
+    margin: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px #FFFFFF;
+}
+.btn{
+    width: 100px;
+    background-color: #FF9900;
+    color: #FFFFFF;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000000;
+}

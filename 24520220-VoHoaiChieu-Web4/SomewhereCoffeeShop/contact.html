@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Somewhere Coffee Shop.">
+  <title>Contact | Somewhere Coffee Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="hero-carousel" data-carousel aria-label="Coffee shop photos">
+        <img class="hero-slide is-active" src="images/coffee1.png" alt="A cup of coffee by the cafe window">
+        <img class="hero-slide" src="images/coffee2.jpg" alt="Freshly roasted coffee beans">
+        <img class="hero-slide" src="images/coffee3.jpg" alt="Customers enjoying the coffee shop">
+        <button class="carousel-button carousel-button--previous" type="button" aria-label="Previous photo">&#10094;</button>
+        <button class="carousel-button carousel-button--next" type="button" aria-label="Next photo">&#10095;</button>
+      </div>
+      <div class="banner-text">
+        <p>We are conveniently located in lower Manhattan with plans to expand into Brooklyn</p>
+        <p>292 Union Square West at 13th St. New York, New York 10003</p>
+        <p>Telephone: 212.555.5555</p>
+      </div>
+      <h1 class="Tieude-Home">Somewhere Coffee Shop</h1>
+    </header>
+
+    <div class="page-layout">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="location.html">Location</a>
+        <a href="menu.html">Menu</a>
+        <a class="active" aria-current="page" href="contact.html">Contact</a>
+      </nav>
+
+      <main class="content">
+        <article class="copy">
+          <h2 class="page-title">Contact Us</h2>
+          <p class="form-intro">Thank you for your interest. Please send us your comments using the form below:</p>
+          <form class="contact-form">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="firstName" autocomplete="given-name" required>
+
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="lastName" autocomplete="family-name" required>
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" rows="5" required></textarea>
+
+            <span class="form-spacer" aria-hidden="true"></span>
+            <label class="newsletter-option" for="newsletter">
+              <input id="newsletter" name="newsletter" type="checkbox">
+              Send me your monthly newsletter
+            </label>
+
+            <span class="form-spacer" aria-hidden="true"></span>
+            <button type="button" class="coffee-button" disabled>Submit</button>
+            <p class="form-note">The contact form is a visual sample and is not connected to a submission service.</p>
+          </form>
+        </article>
+      </main>
+
+      <footer class="site-footer" aria-label="Somewhere">
+        <p>Hours | News | Products | Services | Survey &amp; Feedback</p>
+        <p>&copy; 2022</p>
+      </footer>
+    </div>
+  </div>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/snow.js" defer></script>
+</body>
+</html>

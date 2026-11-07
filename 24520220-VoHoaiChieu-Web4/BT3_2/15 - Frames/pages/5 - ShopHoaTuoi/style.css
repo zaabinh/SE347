@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'Wedding';
+    src: url("fonts/UTM\ Wedding\ K&T.ttf");
+}
+h1{
+    color:white;
+    text-shadow: 
+    0 0 5px #ff007f,
+    0 0 10px #ff007f,
+    0 0 20px #ff007f,
+    0 0 30px #ff66b2;
+    font-style:italic ;
+    font-family:'Wedding',sans-serif;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.Gioithieu{
+    text-align:justify;
+    margin-left: 40%;
+    font-size: larger;
+}
+
+.Lienhe{
+    text-align:justify;
+    margin-left: 40%;
+    font-size: large;
+}
+
+.CTtinhoc{
+    text-align:justify;
+    margin-left: 40%;
+    font-style:italic;
+}
+.tieudegioithieu{
+    background-color: rgb(213, 54, 136);
+    color:white;
+    font-weight: bold;
+}
+
+.tieudelienhe{
+    background-color: rgb(213, 54, 136);
+    color:white;
+    font-weight: bold;
+}
+
+.doan1 {
+    display: block;        
+    margin-left: 30px;
+}
+
+.doan2 {
+    display: block;        
+    margin-left: 30px;
+    
+}
+
+hr{
+    border: none;
+    border-top: 1px solid green; 
+    margin-top: 15px;            
+    margin-left: 0;              
+    width: 50%;
+}
+
+.ct{
+    color:red;
+}
+
+.cp{
+    color:purple;
+    font-style: italic;
+}
+
+.c{
+    color: purple;
+}
+
+.dong1 {
+    display: block;
+}
+
+
+.dong1::before {
+    content: "❉";               
+    color: rgb(142, 62, 207) ; 
+    font-size: 20px;              
+    font-weight: bold;
+    padding-right: 6px;          
+}
+
+.dong2 {
+    display: block;
+}
+
+
+.dong2::before {
+    content: "•";               
+    color: rgb(213, 54, 136);     
+    font-size: 20px;              
+    font-weight: bold;
+    padding-right: 6px;          
+}
+
+body {
+    background-image: url("hinh/binh-hoa.jpg"), url("hinh/nen-hoa-hong.jpg");
+    background-size: 30% 50%,55% 100%;
+    background-position: 15% 40% , 90% ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transform: translateY(28px);
+}
+
+
+
+
+

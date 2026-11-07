@@ -1,0 +1,56 @@
+h1{
+    color: orange;
+    text-align: center;
+    border:2px solid greenyellow;
+}
+.N{
+    font-size:50px;
+    color:greenyellow;
+    font-weight: bold;
+    font-style: italic;
+}
+
+section {
+    display: flex;
+    align-items: stretch;
+    gap:7px;
+}
+
+p{
+    flex:1;
+}
+
+
+.balao{
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    background-color: red;
+}
+
+h2{
+    background-color: rgb(131, 206, 19);
+    color: white;
+    text-align: right;
+    font-size: 35px;
+}
+
+.anh3{
+    text-align: justify;
+    margin-right: 1%;
+}
+
+.anh4{
+    text-align: justify;
+    margin-right: 1%;
+}
+
+.anh5{
+    text-align: justify;
+    margin-right: 1%;
+}
+
+hr{
+    border-color: orange;
+    width: 30;
+}

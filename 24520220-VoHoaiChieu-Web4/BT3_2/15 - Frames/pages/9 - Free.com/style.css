@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(5, 97, 134);
+    text-align:center;
+}
+
+.advertisement-table{
+    background-color: white;
+    width: 60%; 
+    height: 100vh;
+    margin: auto auto;              
+    border-collapse: collapse; 
+    border: 1px solid #ffffff;  
+    table-layout: fixed;
+}
+
+.noi-dung{
+    color:rgb(17, 147, 212);
+    line-height: 0.6;
+}
+.touch{
+    color:rgb(17, 147, 212);
+    line-height: 2.2;
+}
+
+.information{
+    font-family:'Courier New', Courier, monospace;
+    line-height: 0.8;
+    font-size: 15px;
+    font-weight:600;
+}

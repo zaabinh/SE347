@@ -1,0 +1,32 @@
+/* CSS Document */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color: #0062d1;
+    font-weight: bord;
+    margin: 20px auto;
+}
+.tieude{
+    text-shadow: 1px 1px 2px #045798, -2px -2px 4px #0065f7;
+    color:white;
+    text-align: center;
+}.mytable{
+    width: 40%;
+    box-shadow: 10px 10px 30px #33ccff, -2px -2px 2px #33ccff;
+    border-radius:20px;
+    background:url(hinh/khuyen-mai.png) center bottom no-repeat;
+    background-size:contain;
+}
+.txt{
+    border: 1px dotted #0268da;
+    border-radius:20px;
+    background-color:rgba(0,131,246,0.2);
+    padding:5px;
+}
+.btn{
+    background-image:linear-gradient(#0268da, #4da0fd);
+    padding:5px;
+    border:2px solid #1be2ff;
+    border-radius:20px;
+    color:#FFFFFF;
+    font-weight:bold;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Phiếu đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="phieudangky.css">
+    <script src="phieudangky.js"></script>
+</head>
+<body onLoad="txtHoTen.focus();">
+    <h1 class="tieude">Phiếu đăng ký</h1>
+    <form id="frmPhieuDangKy" name="frmPhieuDangKy" method="post" action="xulyDangKy.php" onSubmit="inThongBao();">
+        <table width="42%" height="480" border="0" align="center" cellpadding="5" cellspacing="0" class="mytable">
+            <tr>
+                <td  align="right">Họ tên</td>
+                <td >
+                    <input name="txtHoTen" type="text" autofocus required class="txt" id="txtHoTen" value="" size="30"> (*)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Địa chỉ</td>
+                <td valign="middle">
+                    <textarea name="txaDiaChi" cols="30" rows="3" required wrap="soft" class="txt" id="txaDiaChi"></textarea>
+                    <span style="vertical-align: top;">(*)</span>
+                </td>
+            </tr>
+        <tr>
+            <td align="right">Email</td>
+            <td align="left">
+                <input name ='txtEmail' type ="email" required class="txt" id ="txtEmail">(*)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">Điện thoại</td>
+            <td align="left">
+                <input name="txtTel" type ="tel" required class ="txt" id="txtTel">(*)
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">Giới tính</td>
+            <td>
+                <input type="radio" name="phai" id="nam" checked="checked" />
+                <label for="nam"> Nam</label>
+                <input type="radio" name="phai" id="nu" />
+                <label for="nu"> Nữ</label>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td align="right">Nghề Nhiệp</td>
+            <td>
+                <select name="selNgheNghiep" class ="txt" id="selNgheNghiep">
+                <option value="0" selected="selected">Sinh vien</option>
+                <option value="1">Bac si</option>
+                <option value="2">ky su</option>
+                <option value="3">Giao vien</option>
+                <option value="4">Khac</option>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right">Chọn sản phẩm</td>
+            <td>
+                <select name="selSanPham" multiple="multiple" class="txt" id="selSanPham">
+                <option value="0">kem đánh răng</option>
+                <option value="1">Dầu gội</option>
+                <option value="2">Sữa tắm</option>
+                <option value="3">Bột giặt</option>
+            </td>
+        </tr>
+
+        <tr>
+            <td align="right"> Dự đoán số người tham gia </td>
+            <td>
+                <input name="numDuDoan" class="txt" min="1" max="10000" id="numDuDoan">
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="2" align="center">
+                <input name="submit" type="submit" class="btn" id="submit" value="Đăng ký">      
+                <input name="reset" type="reset" class="btn" id="reset" value="Làm lại" onClick="LamLai();" />
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

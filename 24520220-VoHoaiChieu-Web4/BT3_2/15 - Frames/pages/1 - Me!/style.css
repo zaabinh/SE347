@@ -1,0 +1,33 @@
+* {
+     text-align: center ;
+}
+
+h1 {
+    background-color:rgb(242, 207, 213);
+    color: red;
+    font-size: 20px;
+}
+
+section {
+    background-color:rgb(236, 236, 105) ;
+    font-style: italic;
+}
+
+#doan1 {
+    color : blue;
+}
+
+#doan2 {
+    color :purple;
+}
+
+#doan3 {
+    color :green;
+}
+
+hr {
+    width: 40%;
+    border-color: black;
+}
+
+

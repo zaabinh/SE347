@@ -1,0 +1,67 @@
+h1{
+    text-align: center;
+    color:rgb(14, 228, 18);
+    transform:translateY(80px);
+    font-size:50px;
+}
+
+section {
+    text-align: justify;
+    margin-left: 28%;
+    margin-right: 10%;
+    transform:translateY(100px);
+    font-size: large;
+}
+
+.indent{
+    margin-left: 10%;
+}
+
+#vongfor{
+    color:blue;
+    text-align: justify;
+    margin-right: 30%;
+    padding-left:6.5%;
+    line-height:1.8; 
+    background-color: rgb(211, 208, 205);
+}
+
+.hh1{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.hh2{
+    font-style: italic;
+} 
+.hh3{
+    color:red;
+}
+
+.hh4{
+    font-style: italic;
+}
+.hh5{
+    color:red;
+}
+
+.th1{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.th2{
+    font-style: italic;
+}
+
+.th3{
+    color:red;
+}
+
+.tinh1{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.tinh2{
+    font-style: italic
+}

@@ -1,0 +1,68 @@
+body{
+    background-image: url(images/nguyen-tac-trong-thiet-ke-do-hoa.jpg), url(images/truong_day_thiet_ke_do_hoa.jpg);
+    background-repeat: repeat-x, no-repeat;
+    background-size: 400px,600px;
+    background-position: top left, bottom left; 
+    min-height: 100vh;
+    margin-top: 0%;
+    background-position-x:0, 300px ;
+    background-position-y:0, 350px;
+}
+
+h1{
+    color:#00ff00;
+    text-align: center;
+    text-shadow: 1px 1px 2px #1A7300;
+    margin-top: 10%;
+}
+
+.course-table {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  border: 6px solid #00ff00; 
+  border-spacing: 2px;
+  border-style: solid;
+  margin:auto;
+  
+}
+
+.course-table caption{
+    color :#00ff00;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+
+.course-table th {
+  background-color: #00ff00; 
+  color: #ffffff;            
+  font-weight: bold;
+  border: 1px solid #ffffff;    
+  padding: 8px 12px;
+  border-spacing: 15px;
+}
+
+
+.course-table td {
+  border: 1px solid #00ff00; 
+  padding: 6px 10px;
+  color: #333333;
+}
+
+
+.course-table td.text-left {
+  text-align: left;
+}
+
+
+.course-table tr.color-blue td {
+  background-color: rgb(78, 222, 210);
+}
+
+
+.course-table tr.color-orange td {
+  background-color: #e38914;
+  color: #000000;
+  font-weight: normal;
+}

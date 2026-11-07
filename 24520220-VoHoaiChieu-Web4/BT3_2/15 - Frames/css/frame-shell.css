@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  min-width: 320px;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-shell {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  grid-template-rows: clamp(72px, 12vh, 150px) 48px minmax(0, 1fr) 32px;
+}
+
+.site-header {
+  display: grid;
+  place-items: center;
+  background: #39bcef url("../images/nen-hoa-co.jpg") center / cover no-repeat;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(25px, 2.3vw, 38px);
+  text-align: center;
+  text-shadow: 2px 3px 4px #8c328d;
+}
+
+.top-nav {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: stretch;
+  background: #55ed00;
+  color: #fff;
+}
+
+.top-link,
+.nav-group > summary {
+  display: flex;
+  min-width: 112px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  color: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  text-shadow: 1px 2px 3px #333;
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-group > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group > summary::after {
+  width: 0;
+  height: 0;
+  margin-left: 7px;
+  border-top: 5px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.top-link:hover,
+.top-link.current,
+.nav-group[open] > summary,
+.nav-group > summary:hover {
+  background: #05a779;
+}
+
+.nav-group {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 220px;
+  padding: 6px;
+  background: #55ed00;
+  box-shadow: 0 5px 12px #0003;
+}
+
+.nav-group[open] .dropdown {
+  display: grid;
+}
+
+.dropdown a {
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 1px 2px 3px #333;
+}
+
+.dropdown a:hover,
+.dropdown a:focus-visible {
+  background: #05a779;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.main-layout {
+  display: grid;
+  min-height: 0;
+  grid-template-columns: minmax(190px, 17%) minmax(0, 1fr);
+}
+
+.side-menu {
+  min-height: 0;
+  overflow-y: auto;
+  background: #55ed00 url("../images/nen-hoa-muc-luc.png") center bottom / 100% auto no-repeat;
+}
+
+.side-menu ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 18px 16px 24px;
+  list-style: none;
+}
+
+.side-menu a {
+  display: flex;
+  min-height: 39px;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 24px;
+  background: #ffffff55;
+  color: #fff;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 1px 2px 3px #333;
+  transition: background-color 140ms ease;
+}
+
+.side-menu a::before {
+  margin-right: 12px;
+  content: "•";
+  font-style: normal;
+}
+
+.side-menu a:hover,
+.side-menu a:focus-visible,
+.side-menu a.active {
+  background: #ffffffa3;
+}
+
+.content {
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.content iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border: 0;
+  background: #fff;
+}
+
+.site-footer {
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: #55ed00;
+  color: #fff;
+  font-size: 14px;
+  text-shadow: 1px 2px 3px #333;
+}
+
+.site-footer nav {
+  display: flex;
+  gap: 5px;
+}
+
+.site-footer a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .site-shell {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    grid-template-rows: 230px 58px minmax(700px, 1fr) 48px;
+  }
+
+  .top-link {
+    min-width: 160px;
+    justify-content: flex-start;
+    padding-left: 22px;
+    font-size: 20px;
+  }
+
+  .nav-group {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+    width: 64px;
+    margin-left: auto;
+    align-content: center;
+    justify-items: center;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 23px;
+    height: 2px;
+    background: #fff;
+    box-shadow: 1px 2px 2px #333;
+  }
+
+  .main-layout {
+    position: relative;
+    display: block;
+    overflow: hidden;
+  }
+
+  .side-menu {
+    position: absolute;
+    z-index: 4;
+    inset: 0 auto 0 0;
+    width: min(82vw, 340px);
+    background-size: 100% auto;
+    box-shadow: 4px 0 16px #0003;
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+  }
+
+  .side-menu.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .site-footer {
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .site-footer nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-shell {
+    grid-template-rows: 230px 54px minmax(0, 1fr) 44px;
+  }
+}
